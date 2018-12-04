@@ -1,52 +1,44 @@
 import React from "react";
 import "./table.css";
 
-const Table = () => {
-  return (
-    <div className="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>IMAGE!!!</th>
-            <th>Construction & Related Workers - General</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td> </td>
-            <td>cd barnes</td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> amount $$$</td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td>date 4 sep 9 dec</td>
-          </tr>
-          <b>If you take this job you are Agreeing to work ALL DAYS.</b>
-          <tr>date</tr>
-          <hr />
-          <tr>Location</tr>
-          <tr>123 elmo st</tr>
-          <br />
-          <hr />
-          <tr>Branch</tr>
-          <tr>03389 20398</tr>
-          <hr />
-          <tr>
-            <td>
-              <button>No Thanks</button>
-            </td>
-            <td>
-              <button>I'll Take it</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <label className="table-title">Jobs Available</label>
-    </div>
-  );
+const Table = ({ jobData }) => {
+  //   console.log(jobData);
+  let jobCard;
+  jobCard = jobData.map(job => {
+    const { logo, name, address } = job.company;
+    const { jobId, title, shifts, branch, branchPhoneNumber } = job;
+    var wage = `${job.wagePerHourInCents}`;
+    const wagePerHour = `$${wage / 100}0/hour`;
+    let firstDay = shifts[0].startDate;
+    let lastDay = shifts[shifts.length - 1].endDate;
+    return (
+      <div key={jobId} className="job-card">
+        <img src={logo} />
+        <h3> {title} </h3>
+        <h5>{name}</h5>
+        <h6>{wagePerHour}</h6>
+        <h6>
+          {firstDay} - {lastDay}
+        </h6>
+        <b>If you take this job you are agreeing to work ALL DAYS.</b>
+        <h6>random times</h6>
+        <hr />
+        <h6>Location</h6>
+        <a href="/">
+          <u>{address}</u>
+        </a>
+        <hr />
+        <h6>Branch:</h6>
+        <h6>{branch}</h6>
+        <a href="/">
+          <u>({branchPhoneNumber}) 922-4240</u>
+        </a>
+        <hr />
+        <a href="/">NO THANKS</a> <a href="/">I'LL TAKE IT</a>
+      </div>
+    );
+  });
+  return <div className="table-container">{jobCard}</div>;
 };
 
 export default Table;
