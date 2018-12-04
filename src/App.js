@@ -3,6 +3,7 @@ import "./App.css";
 import getData from "./data/get-data";
 import MainNav from "./navbar/navbar";
 import Header from "./header";
+import Table from "./table";
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class App extends Component {
       <div className="App">
         <MainNav />
         <Header />
+        <Table />
       </div>
     );
   }
