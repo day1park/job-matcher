@@ -32,14 +32,7 @@ class MainNav extends Component {
           <NavbarBrand href="/" className="mr-auto" />
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">GitHub</NavLink>
-              </NavItem>
-            </Nav>
+            <Nav navbar />
           </Collapse>
         </Navbar>
       </div>
