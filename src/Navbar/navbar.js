@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import "./navbar.css";
 
-class MainNavbar extends Component {
+class MainNav extends Component {
   constructor(props) {
     super(props);
 
@@ -51,4 +51,4 @@ class MainNavbar extends Component {
   }
 }
 
-export default MainNavbar;
+export default MainNav;
