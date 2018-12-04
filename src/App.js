@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import Toolbar from "./Toolbar/toolbar";
+import MainNavbar from "./Navbar/navbar";
+import Header from "./Header";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Toolbar />
+        <MainNavbar />
+        <Header />
       </div>
     );
   }
