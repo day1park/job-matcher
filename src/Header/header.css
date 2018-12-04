@@ -1,0 +1,9 @@
+.Header {
+  background-color: rgb(76, 156, 226);
+}
+
+.header-title {
+  background-color: rgb(70, 145, 221);
+  color: white;
+  display: right;
+}
