@@ -25,7 +25,7 @@ export default () =>
           endDate: "2016-09-06T05:00:00Z"
         },
         {
-          startDate: "22016-09-06T21:00:00Z",
+          startDate: "2016-09-06T21:00:00Z",
           endDate: "2016-09-07T05:00:00Z"
         },
         {

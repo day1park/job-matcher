@@ -3,6 +3,16 @@ import "./table.css";
 
 const Table = ({ jobData }) => {
   //   console.log(jobData);
+  //   let workDays;
+  //   workDays = jobData.forEach(days => {
+  //     const { shifts } = days;
+  //     const len = shifts.length;
+  //     for (var i = 0; i < len; i++) {
+  //       console.log(shifts[i].startDate.substring(0, 10));
+  //     }
+  //   });
+  //   console.log(workDays);
+  //   console.log(workDays);
   let jobCard;
   jobCard = jobData.map(job => {
     const { logo, name, address } = job.company;
@@ -10,8 +20,13 @@ const Table = ({ jobData }) => {
     const { jobId, title, shifts, branch, branchPhoneNumber } = job;
     var wage = `${job.wagePerHourInCents}`;
     const wagePerHour = `$${wage / 100}0/hour`;
-    let firstDay = shifts[0].startDate;
-    let lastDay = shifts[shifts.length - 1].endDate;
+    let firstDay = shifts[0].startDate.substring(0, 10);
+    let secondDay = shifts[1].startDate.substring(0, 10);
+    let thirdDay = shifts[2].startDate.substring(0, 10);
+    let fourthDay = shifts[3].startDate.substring(0, 10);
+    let fifthDay = shifts[4].startDate.substring(0, 10);
+    let lastDay = shifts[shifts.length - 1].endDate.substring(0, 10);
+
     return (
       <div key={jobId} className="job-card">
         <div className="job-logo-info">
@@ -20,7 +35,7 @@ const Table = ({ jobData }) => {
             <label className="job-title"> {title} </label>
             <label className="job-name">{nameCaps}</label>
             <label className="job-wage">{wagePerHour}</label>
-
+            <br />
             <label className="job-days">
               {firstDay} - {lastDay}
             </label>
@@ -29,10 +44,11 @@ const Table = ({ jobData }) => {
         <div className="job-timetable">
           <b>If you take this job you are agreeing to work ALL DAYS.</b>
           <ul className="job-hours">
-            <li>random times</li>
-            <li>random times</li>
-            <li>random times</li>
-            <li>random times</li>
+            <li>{firstDay}</li>
+            <li>{secondDay}</li>
+            <li>{thirdDay}</li>
+            <li>{fourthDay}</li>
+            <li>{fifthDay}</li>
           </ul>
         </div>
         <hr />
