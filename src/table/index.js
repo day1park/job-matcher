@@ -2,17 +2,6 @@ import React from "react";
 import "./table.css";
 
 const Table = ({ jobData }) => {
-  //   console.log(jobData);
-  //   let workDays;
-  //   workDays = jobData.forEach(days => {
-  //     const { shifts } = days;
-  //     const len = shifts.length;
-  //     for (var i = 0; i < len; i++) {
-  //       console.log(shifts[i].startDate.substring(0, 10));
-  //     }
-  //   });
-  //   console.log(workDays);
-  //   console.log(workDays);
   let jobCard;
   jobCard = jobData.map(job => {
     const { logo, name, address } = job.company;
