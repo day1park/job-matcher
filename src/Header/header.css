@@ -1,0 +1,11 @@
+.Header {
+  background-color: rgb(105, 185, 230);
+}
+
+.header-title {
+  background-color: rgb(96, 172, 225);
+  color: white;
+  padding: 3px 20px 3px 3px;
+  margin: 5px 15px 5px 15px;
+  font-size: 23px;
+}
