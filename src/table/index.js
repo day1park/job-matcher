@@ -1,20 +1,29 @@
 import React from "react";
 import "./table.css";
+import dateFormat from "dateformat";
 
 const Table = ({ jobData }) => {
   let jobCard;
   jobCard = jobData.map(job => {
-    const { logo, name, address } = job.company;
-    const nameCaps = name.toUpperCase();
     const { jobId, title, shifts, branch, branchPhoneNumber } = job;
-    var wage = `${job.wagePerHourInCents}`;
-    const wagePerHour = `$${wage / 100}0/hour`;
-    let firstDay = shifts[0].startDate.substring(0, 10);
-    let secondDay = shifts[1].startDate.substring(0, 10);
-    let thirdDay = shifts[2].startDate.substring(0, 10);
-    let fourthDay = shifts[3].startDate.substring(0, 10);
-    let fifthDay = shifts[4].startDate.substring(0, 10);
-    let lastDay = shifts[shifts.length - 1].endDate.substring(0, 10);
+    const { logo, name, address } = job.company;
+
+    let nameCaps = name.toUpperCase();
+    let wage = `${job.wagePerHourInCents}`;
+    let wagePerHour = `$${wage / 100}0/hour`;
+    const convertDate = (dateFormat.masks.convertDate =
+      'ddd, mmm dd HH:MM"AM PST" ');
+    const firstLastDay = (dateFormat.masks.firstLastDay = "ddd, mmm dd");
+
+    console.log(dateFormat(shifts[0].startDate, convertDate));
+    let firstDay = dateFormat(shifts[0].startDate, firstLastDay);
+    let lastDay = dateFormat(shifts[shifts.length - 1].endDate, firstLastDay);
+
+    let day1 = dateFormat(shifts[0].startDate, convertDate);
+    let day2 = dateFormat(shifts[1].startDate, convertDate);
+    let day3 = dateFormat(shifts[2].startDate, convertDate);
+    let day4 = dateFormat(shifts[3].startDate, convertDate);
+    let day5 = dateFormat(shifts[4].startDate, convertDate);
 
     return (
       <div key={jobId} className="job-card">
@@ -32,13 +41,13 @@ const Table = ({ jobData }) => {
         </div>
         <div className="job-timetable">
           <b>If you take this job you are agreeing to work ALL DAYS.</b>
-          <ul className="job-hours">
-            <li>{firstDay}</li>
-            <li>{secondDay}</li>
-            <li>{thirdDay}</li>
-            <li>{fourthDay}</li>
-            <li>{fifthDay}</li>
-          </ul>
+          <div className="job-hours">
+            <label>{day1}</label>
+            <label>{day2}</label>
+            <label>{day3}</label>
+            <label>{day4}</label>
+            <label>{day5}</label>
+          </div>
         </div>
         <hr />
         <div className="job-location">
@@ -63,6 +72,7 @@ const Table = ({ jobData }) => {
       </div>
     );
   });
+
   return <div className="table-container">{jobCard}</div>;
 };
 

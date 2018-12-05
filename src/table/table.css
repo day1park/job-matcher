@@ -72,6 +72,7 @@ img.job-logo {
 }
 
 .job-hours {
+  display: grid;
   color: rgb(156, 156, 156);
 }
 
