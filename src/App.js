@@ -14,11 +14,11 @@ class App extends Component {
   }
   componentDidMount() {
     const data = getData();
-    data.then(info => {
+    data.then(jobData => {
       this.setState({
-        jobData: info
+        jobData
       });
-      console.log(this.state);
+      // console.log(this.state);
     });
   }
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
       <div className="App">
         <MainNav />
         <Header />
-        <Table />
+        <Table jobData={this.state.jobData} />
       </div>
     );
   }

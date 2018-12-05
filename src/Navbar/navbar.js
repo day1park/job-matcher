@@ -1,17 +1,5 @@
 import React, { Component } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
 import "./navbar.css";
 
 class MainNav extends Component {
@@ -36,14 +24,7 @@ class MainNav extends Component {
           <NavbarBrand href="/" className="mr-auto" />
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">GitHub</NavLink>
-              </NavItem>
-            </Nav>
+            <Nav navbar />
           </Collapse>
         </Navbar>
       </div>

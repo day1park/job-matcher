@@ -1,5 +1,7 @@
 .navbar {
   background-color: rgb(59, 64, 83);
+  border-bottom: solid 1.4px;
+  height: 10vh;
 }
 
 .navbar-toggler {
