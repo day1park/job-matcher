@@ -20,10 +20,10 @@ const Table = ({ jobData }) => {
     let lastDay = dateFormat(shifts[shifts.length - 1].endDate, firstLastDay);
 
     let day1 = dateFormat(shifts[0].startDate, convertDate);
-    let day2 = dateFormat(shifts[0].startDate, convertDate);
-    let day3 = dateFormat(shifts[0].startDate, convertDate);
-    let day4 = dateFormat(shifts[0].startDate, convertDate);
-    let day5 = dateFormat(shifts[0].startDate, convertDate);
+    let day2 = dateFormat(shifts[1].startDate, convertDate);
+    let day3 = dateFormat(shifts[2].startDate, convertDate);
+    let day4 = dateFormat(shifts[3].startDate, convertDate);
+    let day5 = dateFormat(shifts[4].startDate, convertDate);
 
     return (
       <div key={jobId} className="job-card">
