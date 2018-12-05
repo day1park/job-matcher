@@ -28,7 +28,7 @@ const Table = ({ jobData }) => {
         </div>
         <div className="job-timetable">
           <b>If you take this job you are agreeing to work ALL DAYS.</b>
-          <ul>
+          <ul className="job-hours">
             <li>random times</li>
             <li>random times</li>
             <li>random times</li>
@@ -50,7 +50,8 @@ const Table = ({ jobData }) => {
             <u>({branchPhoneNumber}) 922-4240</u>
           </a>
         </div>
-        <hr />
+
+        <hr className="final-line" />
         <div className="job-selection">
           <a href="/">NO THANKS</a> <a href="/">I'LL TAKE IT</a>
         </div>
